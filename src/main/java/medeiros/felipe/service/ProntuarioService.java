@@ -7,7 +7,7 @@ import java.util.Date;
 
 public interface ProntuarioService {
 
-    Prontuario cadastrarEvolucao(Prontuario prontuario, Long pacienteId);
+    Prontuario cadastrarEvolucao(Long pacienteId ,String descricao );
 
     Prontuario classificarEstadoRisco(Long prontuarioId, String estadoRisco);
 
@@ -19,6 +19,6 @@ public interface ProntuarioService {
 
     Prontuario encaminharPaciente(Long prontuarioId, String motivo);
 
-    Prontuario darAltaPaciente(Long prontuarioId, String motivo, Date data);
+    Prontuario darAltaPaciente(Long prontuarioId, String motivo, String data);
 
 }

@@ -11,17 +11,17 @@ public class Prontuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroDoProntuario;
 
-    private Date dataEvolucao;
+    private String dataEvolucao;
     private String estadoRisco;
     private boolean acompanhamentoGrupo;
     private int presencas;
     private int faltas;
     private String encaminhamentoMotivo;
     private String altaMotivo;
-    private Date altaData;
+    private String altaData;
 
     @ManyToOne
-    @JoinColumn(name = "paciente_pt")
+    @JoinColumn(name = "pt_paciente")
     private Paciente paciente;
 
 }

@@ -8,9 +8,6 @@ import medeiros.felipe.service.ProntuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.Optional;
-
 @Service
 public class ProntuarioServiceImpl implements ProntuarioService {
     @Autowired
@@ -19,14 +16,11 @@ public class ProntuarioServiceImpl implements ProntuarioService {
     private PacienteRepository pacienteRepository;
 
 
-    public ProntuarioServiceImpl(ProntuarioRepository prontuatrioRepository) {
-        this.prontuarioRepository = prontuatrioRepository;
-    }
-
-    @Override
-    public Prontuario cadastrarEvolucao(Prontuario prontuario, Long numeroDoProntuario) {
+     @Override
+    public Prontuario cadastrarEvolucao( Long numeroDoProntuario,String descricao) {
         Paciente paciente = pacienteRepository.findById(numeroDoProntuario).orElse(null);
         if (paciente != null) {
+            Prontuario prontuario = null;
             prontuario.setPaciente(paciente);
             return prontuarioRepository.save(prontuario);
         }
@@ -85,7 +79,7 @@ public class ProntuarioServiceImpl implements ProntuarioService {
     }
 
     @Override
-    public Prontuario darAltaPaciente(Long numeroDoProntuario, String motivo, Date data) {
+    public Prontuario darAltaPaciente(Long numeroDoProntuario, String motivo, String data) {
         Prontuario prontuarioPaciente = prontuarioRepository.findById(numeroDoProntuario).orElse(null);
         if (prontuarioPaciente != null){
             prontuarioPaciente.setAltaMotivo(motivo);
