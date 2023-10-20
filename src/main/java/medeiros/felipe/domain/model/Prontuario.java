@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 @Data
 @Entity
-public class Prontuario extends Paciente {
+public class Prontuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroDoProntuario;
