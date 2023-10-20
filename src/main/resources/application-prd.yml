@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+      # para criar o bco: executa somenta a primeira vez " ddl-auto: create ", depois troca create por "validate"
