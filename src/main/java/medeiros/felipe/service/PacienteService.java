@@ -4,7 +4,7 @@ import medeiros.felipe.domain.model.Paciente;
 
 import java.util.List;
 
-public interface PacienterService {
+public interface PacienteService {
 
     List<Paciente> listarTodosPacientes();
 

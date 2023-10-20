@@ -2,11 +2,11 @@ package medeiros.felipe.service.impl;
 
 import medeiros.felipe.domain.model.Paciente;
 import medeiros.felipe.domain.repository.PacienteRepository;
-import medeiros.felipe.service.PacienterService;
+import medeiros.felipe.service.PacienteService;
 
 import java.util.List;
 
-public class PacienterServiceImpl implements PacienterService {
+public class PacienteServiceImpl implements PacienteService {
     private PacienteRepository pacienteRepository;
 
     @Override
@@ -28,7 +28,7 @@ public class PacienterServiceImpl implements PacienterService {
     public Paciente atualizarPaciente(Long numeroDoProntuario, Paciente paciente) {
         Paciente pacienteExistente = pacienteRepository.findById(numeroDoProntuario).orElse(null);
         if (pacienteExistente != null) {
-            paciente.setNumeroDoProntuario(numeroDoProntuario);
+            paciente.setId(numeroDoProntuario);
             return pacienteRepository.save(paciente);
         }
         return null;

@@ -33,7 +33,7 @@ public class PacienteController {
 
     @PutMapping("/{numeroDoProntuario}")
     public Paciente atualizarDadosDoPaciente(@PathVariable Long numeroDoProntuario, @RequestBody Paciente paciente) {
-        paciente.setNumeroDoProntuario(numeroDoProntuario);
+        paciente.setId(numeroDoProntuario);
         return pacienteRepository.save(paciente);
     }
 
