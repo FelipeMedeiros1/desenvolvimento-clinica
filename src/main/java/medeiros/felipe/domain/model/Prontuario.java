@@ -3,9 +3,8 @@ package medeiros.felipe.domain.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
 @Data
-@Entity
+@Entity(name = "tb_prontuario")
 public class Prontuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +21,6 @@ public class Prontuario {
 
     @ManyToOne
     @JoinColumn(name = "pt_paciente")
-    private Paciente paciente;
+    private Paciente pt_paciente;
 
 }

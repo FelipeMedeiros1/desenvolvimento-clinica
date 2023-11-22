@@ -19,7 +19,7 @@ public class Paciente {
     private Date dataEntrada;
     private String motivoDoTratamento;
 
-    @OneToMany(mappedBy = "paciente")
+    @OneToMany(mappedBy = "pt_paciente")
     private List<Prontuario> prontuarios;
 
 
